@@ -14,14 +14,16 @@ public class EmployeeController {
     private final EmployeeService employeeService;
 
     public EmployeeController(EmployeeService employeeService) {
+
         this.employeeService = employeeService;
     }
     @GetMapping("add")
     public Employee add(
-            @RequestParam("firstName") String firstName,
-            @RequestParam("lastName") String lastName
+            @RequestParam("fullName") String fullName
+            //@RequestParam("firstName") String firstName,
+            //@RequestParam("lastName") String lastName
     ) {
-        return employeeService.add(firstName, lastName);
+        return employeeService.add(fullName, phoneNumber);
     }
     @GetMapping("remove")
     public Employee remove(

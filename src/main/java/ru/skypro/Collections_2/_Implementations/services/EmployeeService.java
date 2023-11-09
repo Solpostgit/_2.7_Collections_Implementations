@@ -5,8 +5,8 @@ import ru.skypro.Collections_2._Implementations.Employee;
 import java.util.List;
 
 public interface EmployeeService {
-    Employee add(String firstName, String lastName);
-    Employee remove(String firstName, String lastName);
-    Employee find(String firstName, String lastName);
-    List<Employee> getAll();
+    Employee put(String fullName, String phoneNumber);
+    Employee get(String fullName, String phoneNumber);
+    Employee remove(String fullName, String phoneNumber);
+    //List<Employee> getAll();
 }
