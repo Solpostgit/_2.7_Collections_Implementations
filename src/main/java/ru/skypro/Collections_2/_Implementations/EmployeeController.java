@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ru.skypro.Collections_2._Implementations.services.EmployeeService;
 
-import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/employees")
@@ -19,11 +19,10 @@ public class EmployeeController {
     }
     @GetMapping("add")
     public Employee add(
-            @RequestParam("fullName") String fullName
-            //@RequestParam("firstName") String firstName,
-            //@RequestParam("lastName") String lastName
+            @RequestParam("firstName") String firstName,
+            @RequestParam("lastName") String lastName
     ) {
-        return employeeService.add(fullName, phoneNumber);
+        return employeeService.add(firstName, lastName);
     }
     @GetMapping("remove")
     public Employee remove(
@@ -40,7 +39,7 @@ public class EmployeeController {
         return employeeService.find(firstName, lastName);
     }
     @GetMapping
-    public List<Employee> getAll() {
+    public Map<String, Employee> getAll() {
         return employeeService.getAll();
     }
 }
